@@ -42,13 +42,6 @@ export default function Hero() {
     Start a Project
     <span className="ml-2 text-base">↗</span>
   </a>
-
-  <a
-    href="#services"
-    className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-7 py-3.5 text-sm font-semibold text-slate-800 transition duration-300 hover:border-cyan-500 hover:bg-cyan-50 hover:text-slate-950"
-  >
-    Explore Services
-  </a>
 </div>
 
           {/* Small supporting points */}
