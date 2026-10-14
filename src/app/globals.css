@@ -1,3 +1,4 @@
+
 @import "tailwindcss";
 
 :root {
@@ -24,6 +25,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 90px;
 }
 
 body {
@@ -31,6 +33,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -40,4 +43,329 @@ a {
 
 button {
   font-family: inherit;
+}
+
+/* Smooth interaction defaults */
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent-light);
+  outline-offset: 4px;
+}
+
+/* Reusable entrance animations */
+@keyframes ca-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ca-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes ca-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes ca-glow {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.08);
+  }
+}
+
+/* Add these classes to elements when needed */
+.ca-fade-up {
+  animation: ca-fade-up 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.ca-fade-in {
+  animation: ca-fade-in 700ms ease both;
+}
+
+.ca-float {
+  animation: ca-float 6s ease-in-out infinite;
+}
+
+.ca-glow {
+  animation: ca-glow 5s ease-in-out infinite;
+}
+
+/* Staggered entrance delays */
+.ca-delay-1 {
+  animation-delay: 100ms;
+}
+
+.ca-delay-2 {
+  animation-delay: 200ms;
+}
+
+.ca-delay-3 {
+  animation-delay: 300ms;
+}
+
+.ca-delay-4 {
+  animation-delay: 400ms;
+}
+
+/* Shared hover effects */
+.ca-hover-lift {
+  transition:
+    transform 250ms ease,
+    box-shadow 250ms ease,
+    border-color 250ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .ca-hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 40px rgb(7 26 43 / 10%);
+  }
+
+  .ca-hover-glow:hover {
+    box-shadow: 0 12px 35px rgb(6 182 212 / 18%);
+  }
+}
+
+.ca-hover-glow {
+  transition: box-shadow 250ms ease;
+}
+
+/* Respect accessibility preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Automatic scroll-reveal animations across the website */
+.ca-auto-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  filter: blur(2px);
+  transition:
+    opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* Premium scroll-reveal animations across the website */
+.ca-auto-reveal {
+  opacity: 0;
+  transform: translate3d(0, 65px, 0) scale(0.975);
+  filter: blur(5px);
+
+  transition:
+    opacity 1000ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1000ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 1000ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  will-change: opacity, transform, filter;
+  backface-visibility: hidden;
+}
+
+
+/* Cinematic scroll-reveal animations */
+.ca-auto-reveal {
+  opacity: 0;
+  transform: translate3d(0, 110px, 0) scale(0.94);
+  filter: blur(10px);
+
+  transition:
+    opacity 1300ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1300ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 1300ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  will-change: opacity, transform, filter;
+  backface-visibility: hidden;
+}
+
+
+/* Smooth, premium scroll-reveal animations */
+.ca-auto-reveal {
+  opacity: 0;
+  transform: translate3d(0, 85px, 0) scale(0.96);
+  filter: blur(7px);
+
+  transition:
+    opacity 1100ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1100ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 1100ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  will-change: opacity, transform, filter;
+  backface-visibility: hidden;
+}
+
+.ca-auto-reveal.ca-revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  filter: blur(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ca-auto-reveal,
+  .ca-auto-reveal.ca-revealed {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+    will-change: auto;
+  }
+}
+
+/* ========================================
+   CODE AVENUE — CARD HOVER ANIMATIONS
+   ======================================== */
+
+/* Smooth hover transitions for common cards */
+main article,
+main [class*="rounded-xl"],
+main [class*="rounded-2xl"],
+main [class*="rounded-3xl"] {
+  transition:
+    transform 300ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 300ms ease,
+    border-color 300ms ease;
+}
+
+/* Lift and cyan glow on desktop hover */
+@media (hover: hover) and (pointer: fine) {
+  main article:hover,
+  main [class*="rounded-xl"]:hover,
+  main [class*="rounded-2xl"]:hover,
+  main [class*="rounded-3xl"]:hover {
+    transform: translateY(-6px);
+    box-shadow:
+      0 14px 35px rgba(8, 145, 178, 0.12),
+      0 0 0 1px rgba(8, 145, 178, 0.18);
+    border-color: rgba(8, 145, 178, 0.45);
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  main article,
+  main [class*="rounded-xl"],
+  main [class*="rounded-2xl"],
+  main [class*="rounded-3xl"] {
+    transition: none;
+  }
+
+  main article:hover,
+  main [class*="rounded-xl"]:hover,
+  main [class*="rounded-2xl"]:hover,
+  main [class*="rounded-3xl"]:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* ========================================
+   CODE AVENUE — BUTTON MICRO-INTERACTIONS
+   ======================================== */
+
+/* Smooth transitions for buttons and CTA links */
+main button,
+main a[class*="bg-"],
+main a[class*="border-"],
+footer button,
+footer a[class*="bg-"],
+footer a[class*="border-"] {
+  transition:
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 220ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease,
+    color 220ms ease;
+}
+
+/* Hover effect for desktop and laptop users */
+@media (hover: hover) and (pointer: fine) {
+  main button:hover:not(:disabled),
+  main a[class*="bg-"]:hover,
+  main a[class*="border-"]:hover,
+  footer button:hover:not(:disabled),
+  footer a[class*="bg-"]:hover,
+  footer a[class*="border-"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(8, 145, 178, 0.22);
+  }
+}
+
+/* Press feedback */
+main button:active:not(:disabled),
+main a[class*="bg-"]:active,
+main a[class*="border-"]:active,
+footer button:active:not(:disabled),
+footer a[class*="bg-"]:active,
+footer a[class*="border-"]:active {
+  transform: scale(0.97);
+  box-shadow: none;
+}
+
+/* Keyboard accessibility */
+main button:focus-visible,
+main a:focus-visible,
+footer button:focus-visible,
+footer a:focus-visible {
+  outline: 2px solid #06b6d4;
+  outline-offset: 4px;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  main button,
+  main a[class*="bg-"],
+  main a[class*="border-"],
+  footer button,
+  footer a[class*="bg-"],
+  footer a[class*="border-"] {
+    transition: none;
+  }
+
+  main button:hover,
+  main a[class*="bg-"]:hover,
+  main a[class*="border-"]:hover,
+  footer button:hover,
+  footer a[class*="bg-"]:hover,
+  footer a[class*="border-"]:hover {
+    transform: none;
+    box-shadow: none;
+  }
 }
