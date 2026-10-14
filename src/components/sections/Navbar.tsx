@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -84,9 +83,7 @@ const dropdownLinkClass =
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(
-    null
-  );
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [showLogo, setShowLogo] = useState(false);
 
   const closeMenus = () => {
@@ -95,9 +92,7 @@ export default function Navbar() {
   };
 
   const toggleDropdown = (name: string) => {
-    setActiveDropdown((current) =>
-      current === name ? null : name
-    );
+    setActiveDropdown((current) => (current === name ? null : name));
   };
 
   const dropdownTrigger = (label: string, name: string) => (
@@ -352,7 +347,7 @@ export default function Navbar() {
               <a
                 href="/#home"
                 onClick={closeMenus}
-                className="rounded-lg px-3 py-3 text-sm font-medium text-white transition hover:bg-white/5 hover:text-cyan-300"
+                className="rounded-lg px-3 py-3 text-sm font-medium !text-white transition hover:bg-white/5 hover:!text-cyan-300"
               >
                 Home
               </a>
@@ -362,7 +357,7 @@ export default function Navbar() {
                 type="button"
                 onClick={() => toggleDropdown("mobile-services")}
                 aria-expanded={activeDropdown === "mobile-services"}
-                className="flex items-center justify-between rounded-lg px-3 py-3 text-left text-sm font-medium text-white transition hover:bg-white/5 hover:text-cyan-300"
+                className="flex items-center justify-between rounded-lg px-3 py-3 text-left text-sm font-medium !text-white transition hover:bg-white/5 hover:!text-cyan-300"
               >
                 Services
                 <span
@@ -381,7 +376,7 @@ export default function Navbar() {
                       key={service.href}
                       href={service.href}
                       onClick={closeMenus}
-                      className="block rounded-lg px-3 py-2.5 text-sm text-white transition hover:bg-white/10 hover:text-cyan-300"
+                      className="block rounded-lg px-3 py-2.5 text-sm !text-white transition hover:bg-white/10 hover:!text-cyan-300"
                     >
                       {service.title}
                     </a>
@@ -390,7 +385,7 @@ export default function Navbar() {
                   <a
                     href="/services"
                     onClick={closeMenus}
-                    className="block rounded-lg px-3 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10 hover:text-cyan-300"
+                    className="block rounded-lg px-3 py-2.5 text-sm font-semibold !text-white transition hover:bg-white/10 hover:!text-cyan-300"
                   >
                     Explore all services ↗
                   </a>
@@ -402,7 +397,7 @@ export default function Navbar() {
                 type="button"
                 onClick={() => toggleDropdown("mobile-about")}
                 aria-expanded={activeDropdown === "mobile-about"}
-                className="flex items-center justify-between rounded-lg px-3 py-3 text-left text-sm font-medium text-white transition hover:bg-white/5 hover:text-cyan-300"
+                className="flex items-center justify-between rounded-lg px-3 py-3 text-left text-sm font-medium !text-white transition hover:bg-white/5 hover:!text-cyan-300"
               >
                 About
                 <span
@@ -423,7 +418,7 @@ export default function Navbar() {
                   <a
                     href="/#about"
                     onClick={closeMenus}
-                    className="mt-3 inline-block text-sm font-semibold text-white transition hover:text-cyan-300"
+                    className="mt-3 inline-block text-sm font-semibold !text-white transition hover:!text-cyan-300"
                   >
                     Learn more about us ↗
                   </a>
@@ -435,7 +430,7 @@ export default function Navbar() {
                 type="button"
                 onClick={() => toggleDropdown("mobile-process")}
                 aria-expanded={activeDropdown === "mobile-process"}
-                className="flex items-center justify-between rounded-lg px-3 py-3 text-left text-sm font-medium text-white transition hover:bg-white/5 hover:text-cyan-300"
+                className="flex items-center justify-between rounded-lg px-3 py-3 text-left text-sm font-medium !text-white transition hover:bg-white/5 hover:!text-cyan-300"
               >
                 How We Work
                 <span
@@ -471,7 +466,7 @@ export default function Navbar() {
               <a
                 href="/blog"
                 onClick={closeMenus}
-                className="rounded-lg px-3 py-3 text-sm font-medium text-white transition hover:bg-white/5 hover:text-cyan-300"
+                className="rounded-lg px-3 py-3 text-sm font-medium !text-white transition hover:bg-white/5 hover:!text-cyan-300"
               >
                 Blog
               </a>
@@ -480,7 +475,7 @@ export default function Navbar() {
               <a
                 href="/#faq"
                 onClick={closeMenus}
-                className="rounded-lg px-3 py-3 font-medium text-white transition hover:bg-white/5 hover:text-cyan-300"
+                className="rounded-lg px-3 py-3 font-medium !text-white transition hover:bg-white/5 hover:!text-cyan-300"
               >
                 FAQ
               </a>
