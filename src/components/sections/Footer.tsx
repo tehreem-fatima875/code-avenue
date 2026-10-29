@@ -276,6 +276,19 @@ export default function Footer() {
   </svg>
 </a>
 
+                {/* LinkedIn */}
+<a
+  href="https://www.linkedin.com/in/tehreem-fatima-609105368/"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="LinkedIn"
+  className="group/social flex h-11 w-11 items-center justify-center rounded-xl border border-[#0A66C2]/20 bg-slate-50 transition-all duration-300 hover:-translate-y-1 hover:border-[#0A66C2]/35 hover:bg-slate-50 hover:shadow-[0_12px_25px_rgba(10,102,194,0.18)]"
+>
+  <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="#0A66C2" aria-hidden="true">
+    <path d="M5.2 3.5a2.2 2.2 0 1 0 0 4.4 2.2 2.2 0 0 0 0-4.4ZM3.4 9.5H7v11H3.4v-11Zm5.8 0h3.5V11h.1c.5-.9 1.7-1.9 3.5-1.9 3.7 0 4.4 2.4 4.4 5.5v5.9h-3.7v-5.2c0-1.2 0-2.8-1.8-2.8s-2.1 1.3-2.1 2.7v5.3H9.2v-11Z" />
+  </svg>
+</a>
+
             {/* Instagram */}
 <a
   href="https://instagram.com/codeavenue.web"

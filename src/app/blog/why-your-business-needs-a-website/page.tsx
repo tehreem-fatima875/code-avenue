@@ -1,3 +1,4 @@
+import BlogIllustration from "@/components/sections/BlogIllustration";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/sections/Navbar";
@@ -119,6 +120,7 @@ export default function WhyYourBusinessNeedsAWebsitePage() {
         <section className="px-6 py-14 sm:py-20 lg:px-8">
           <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[minmax(0,1fr)_290px]">
             <article className="min-w-0">
+            <BlogIllustration scene="website" />
               <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
                 <p className="text-lg leading-8 text-slate-600">
                   Customers often research a business online before deciding

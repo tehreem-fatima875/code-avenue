@@ -1,3 +1,4 @@
+import BlogIllustration from "@/components/sections/BlogIllustration";
 
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -124,6 +125,7 @@ export default function ChooseTheRightWebsitePage() {
         {/* Article Layout */}
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-12 lg:grid-cols-[minmax(0,1fr)_260px] lg:gap-14 lg:py-16">
           <article className="min-w-0">
+            <BlogIllustration scene="website" />
             <div className="rounded-2xl border border-cyan-100 bg-cyan-50/70 p-5 sm:p-6">
               <p className="text-sm font-bold uppercase tracking-wider text-cyan-800">
                 In this guide

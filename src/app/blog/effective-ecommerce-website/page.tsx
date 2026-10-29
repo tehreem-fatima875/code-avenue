@@ -1,3 +1,4 @@
+import BlogIllustration from "@/components/sections/BlogIllustration";
 
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -147,6 +148,7 @@ export default function EffectiveEcommerceWebsitePage() {
         {/* Article Content */}
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-12 lg:grid-cols-[minmax(0,1fr)_260px] lg:gap-14 lg:py-16">
           <article className="min-w-0">
+            <BlogIllustration scene="ecommerce" />
             {/* Table of Contents */}
             <nav
               aria-label="Table of contents"

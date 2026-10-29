@@ -303,6 +303,33 @@ export default function Navbar() {
               Blog
             </a>
 
+            {/* Portfolio Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setActiveDropdown("portfolio")}
+              onMouseLeave={() => setActiveDropdown(null)}
+              onKeyDown={(event) => {
+                if (event.key === "Escape") setActiveDropdown(null);
+              }}
+            >
+              {dropdownTrigger("Portfolio", "portfolio")}
+              {activeDropdown === "portfolio" && (
+                <div className="absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 pt-4">
+                  <div className="rounded-2xl border border-white/10 bg-[#071a2b] p-3 shadow-2xl shadow-black/40">
+                    {[
+                      ["Advertising Portfolio", "Brand campaigns and digital growth.", "/portfolio/advertising"],
+                      ["Web Development Portfolio", "Selected websites and digital products.", "/portfolio/web-development"],
+                    ].map(([title, description, href]) => (
+                      <a key={href} href={href} onClick={closeMenus} className={dropdownLinkClass}>
+                        <p className="font-semibold text-white transition group-hover:text-cyan-300">{title}</p>
+                        <p className="mt-1 text-sm leading-5 text-white/70">{description}</p>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
             {/* FAQ */}
             <a href="/#faq" className={navLinkClass}>
               FAQ
@@ -470,6 +497,22 @@ export default function Navbar() {
               >
                 Blog
               </a>
+
+              <button
+                type="button"
+                onClick={() => toggleDropdown("mobile-portfolio")}
+                aria-expanded={activeDropdown === "mobile-portfolio"}
+                className="flex items-center justify-between rounded-lg px-3 py-3 text-left text-sm font-medium !text-white transition hover:bg-white/5 hover:!text-cyan-300"
+              >
+                Portfolio
+                <span className={`transition-transform ${activeDropdown === "mobile-portfolio" ? "rotate-180" : ""}`}>▾</span>
+              </button>
+              {activeDropdown === "mobile-portfolio" && (
+                <div className="mb-2 space-y-1 rounded-xl bg-white/5 p-3">
+                  <a href="/portfolio/advertising" onClick={closeMenus} className="block rounded-lg px-3 py-2.5 text-sm text-white hover:bg-white/10 hover:text-cyan-300">Advertising Portfolio</a>
+                  <a href="/portfolio/web-development" onClick={closeMenus} className="block rounded-lg px-3 py-2.5 text-sm text-white hover:bg-white/10 hover:text-cyan-300">Web Development Portfolio</a>
+                </div>
+              )}
 
               {/* FAQ */}
               <a

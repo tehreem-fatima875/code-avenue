@@ -238,6 +238,33 @@ button:focus-visible {
   filter: blur(0);
 }
 
+/* Portfolio cards flip to reveal project details. */
+.portfolio-flip {
+  transform-style: preserve-3d;
+  transition: transform 700ms cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+.portfolio-front,
+.portfolio-back {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.portfolio-back {
+  transform: rotateY(180deg);
+}
+
+.group:hover .portfolio-flip,
+.group:focus-visible .portfolio-flip {
+  transform: rotateY(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-flip {
+    transition: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .ca-auto-reveal,
   .ca-auto-reveal.ca-revealed {
