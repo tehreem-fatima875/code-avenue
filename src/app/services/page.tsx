@@ -116,6 +116,15 @@ export default function ServicesPage() {
                   href={service.href}
                   className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-300 hover:shadow-xl hover:shadow-slate-200/60"
                 >
+                  <div aria-hidden="true" className="relative mb-5 flex h-28 items-end gap-2 overflow-hidden rounded-xl border border-cyan-100 bg-gradient-to-br from-[#071a2b] via-[#10334a] to-[#15506a] p-4">
+                    <div className="absolute -right-5 -top-10 h-28 w-28 rounded-full bg-cyan-300/20 blur-2xl transition group-hover:scale-125" />
+                    <div className="absolute left-4 top-4 h-2 w-2 rounded-full bg-cyan-300" />
+                    <div className="absolute left-8 top-4 h-2 w-12 rounded-full bg-white/20" />
+                    <div className="z-10 h-8 flex-1 rounded-t-md border border-white/10 bg-white/[.08]" />
+                    <div className="z-10 h-14 flex-1 rounded-t-md border border-white/10 bg-cyan-300/20" />
+                    <div className="z-10 h-11 flex-1 rounded-t-md border border-white/10 bg-white/[.12]" />
+                    <div className="z-10 h-20 flex-1 rounded-t-md border border-white/10 bg-white/[.08]" />
+                  </div>
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-semibold tracking-widest text-cyan-700">
                       {service.number}
