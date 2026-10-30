@@ -319,6 +319,7 @@ export default function Navbar() {
                     {[
                       ["Advertising Portfolio", "Brand campaigns and digital growth.", "/portfolio/advertising"],
                       ["Web Development Portfolio", "Selected websites and digital products.", "/portfolio/web-development"],
+                      ["Curriculum Vitae", "View my curriculum vitae.", "https://curriculumvit.netlify.app"],
                     ].map(([title, description, href]) => (
                       <a key={href} href={href} onClick={closeMenus} className={dropdownLinkClass}>
                         <p className="font-semibold text-white transition group-hover:text-cyan-300">{title}</p>
@@ -511,6 +512,7 @@ export default function Navbar() {
                 <div className="mb-2 space-y-1 rounded-xl bg-white/5 p-3">
                   <a href="/portfolio/advertising" onClick={closeMenus} className="block rounded-lg px-3 py-2.5 text-sm text-white hover:bg-white/10 hover:text-cyan-300">Advertising Portfolio</a>
                   <a href="/portfolio/web-development" onClick={closeMenus} className="block rounded-lg px-3 py-2.5 text-sm text-white hover:bg-white/10 hover:text-cyan-300">Web Development Portfolio</a>
+                  <a href="https://curriculumvit.netlify.app" onClick={closeMenus} className="block rounded-lg px-3 py-2.5 text-sm text-white hover:bg-white/10 hover:text-cyan-300">Curriculum Vitae</a>
                 </div>
               )}
 
